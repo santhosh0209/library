@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@900&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    .bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url('/static/1.jpg');
+        background-size: cover;
+        height: 100vh;
+        justify-content: center;
+        width: 100%;
+        padding-top: 0;
+    }
+    
+    button {
+        list-style: none;
+        text-decoration: none;
+        outline: none;
+    }
+    
+    a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #000;
+    }
+    
+    .btns {
+        text-align: center;
+        position: relative;
+        top: 40%;
+    }
+    
+    .btns button {
+        display: inline-block;
+        text-align: center;
+        padding: 15px 30px;
+        margin-bottom: 10px;
+        background-color: yellow;
+        border: 2px solid #000;
+        border-radius: 50px;
+        font-family: 'Roboto Slab', serif;
+        transition: all .3s;
+    }
+    
+    .btns button:hover {
+        background: transparent;
+    }
+    
+    .btns button:hover a {
+        color: #fff;
+    }
+</style>
+
+<body>
+
+    <div class="bg">
+        <div class="btns">
+            {% if user.is_authenticated %}
+
+            <button><a href="{% url 'books' %}">Admin</a></button><br> {%else%}
+            <button><a href="{% url 'login' %}">Login</a></button> {% endif %}
+            <button>    <a href="{% url 'student_books' %}">List of books</a>
+            </button>
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

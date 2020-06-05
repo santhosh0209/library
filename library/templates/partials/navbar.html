@@ -1,0 +1,70 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a style="font-size: 30px;" class="navbar-brand" href="#">Library system</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="/">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{ request.user.username }} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'books' %}">
+                        <span class="sidebar-icon"><i class="fa fa-dashboard"></i></span>
+                        <span class="sidebar-title">Books</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-2">
+                        <span class="sidebar-icon"><i class="fa fa-users"></i></span>
+                        <span class="sidebar-title">Accounts</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul id="submenu-2" class="panel-collapse collapse panel-switch" role="menu">
+                        <li><a href="{% url 'students' %}">Students</a></li>
+                        {% comment %}
+                        <li><a href="#">Roles</a></li> {% endcomment %}
+                    </ul>
+                </li>
+                <li>
+                    <a class="accordion-toggle collapsed toggle-switch" data-toggle="collapse" href="#submenu-3">
+                        <span class="sidebar-icon"><i class="fa fa-newspaper-o"></i></span>
+                        <span class="sidebar-title">Transaction</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul id="submenu-3" class="panel-collapse collapse panel-switch" role="menu">
+                        <li><a href="{% url 'borrow' %}">Borrowing</a></li>
+                        <li><a href="{% url 'returning' %}">Returning</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="{% url 'books' %}">
+                        <span class="sidebar-icon"><i class="fa fa-database"></i></span>
+                        <span class="sidebar-title">Books</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'categories' %}">
+                        <span class="sidebar-icon"><i class="fa fa-database"></i></span>
+                        <span class="sidebar-title">Category</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
