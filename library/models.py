@@ -32,4 +32,5 @@ class Borrow(models.Model):
     student = models.ManyToManyField(Student)
     qty = models.IntegerField(default=0)
     date = models.DateField(default=date.today)
+    
     status = models.CharField(max_length=25)

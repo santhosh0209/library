@@ -69,8 +69,8 @@
         <div class="btns">
             {% if user.is_authenticated %}
 
-            <button><a href="{% url 'books' %}">Admin</a></button><br> {%else%}
-            <button><a href="{% url 'login' %}">Login</a></button> {% endif %}
+            <button><a href="{% url 'books' %}">Admin</a></button> <br> {%else%}
+            <button><a href="{% url 'login' %}">Login</a></button> <br> {% endif %}
             <button>    <a href="{% url 'student_books' %}">List of books</a>
             </button>
 
